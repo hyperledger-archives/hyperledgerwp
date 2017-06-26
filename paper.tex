@@ -1,0 +1,71 @@
+\def\fullversionflag{0}
+
+\ifodd\fullversionflag
+    \documentclass[letterpaper,11pt]{article}
+\else
+    \documentclass{llncs}
+\fi
+
+\usepackage{etoolbox}
+\newtoggle{fullversion}
+\ifodd\fullversionflag
+    \toggletrue{fullversion}
+\else
+    \togglefalse{fullversion}
+\fi
+
+\input{latexdefs}
+
+\iftoggle{fullversion}{
+    \usepackage{authblk}
+}{}
+
+\pagestyle{plain}
+
+\usepackage{breakcites}
+
+\begin{document}
+
+\title{Hyperledger Something-Paper}
+\date{}
+\author{}
+\iftoggle{fullversion}{
+}{
+\institute{}
+}
+
+\maketitle
+
+
+\begin{abstract}  \vspace{-15mm} 
+This paper describes industry use cases that drive the principles behind a new blockchain platform, and outlines the basic requirements and high-level architecture based on those use cases. The design presented here describes this evolving open-source blockchain platform, called Hyperledger, as a protocol for business-to-business and business-to-customer transactions. Hyperledger allows for compliance with regulations, while supporting the varied requirements that arise when competing businesses work together on the same network. The central elements of this specification (described below) are smart contracts, digital assets, record repositories, a decentralized consensus-based network, and cryptographic security. Added to these blockchain staples are industry requirements for performance, verified identities, private and confidential transactions, and a pluggable consensus model.
+\end{abstract}
+
+\input{introduction_2}
+\input{what_is_hyperledger}
+\input{introduction}
+\input{why_hyperledger}
+\input{our_vision}
+\input{use_cases}
+\input{featured_requirements}
+% \input{lowerbound}
+\input{conclusion}
+
+\iftoggle{fullversion}{
+    \bibliographystyle{alpha}
+}{
+    \bibliographystyle{alpha}
+}
+\bibliography{hyperledger}
+
+\clearpage
+%\appendix
+\iftoggle{fullversion}{}{
+%\input{appendix.tex}
+}
+%\input{appendixtwo.tex}
+\iftoggle{fullversion}{}{
+%\input{appendixthree.tex}
+}
+
+\end{document}
