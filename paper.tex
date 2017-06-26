@@ -1,0 +1,88 @@
+\def\fullversionflag{0}
+
+\ifodd\fullversionflag
+    \documentclass[letterpaper,11pt]{article}
+\else
+    \documentclass{llncs}
+\fi
+
+\usepackage{etoolbox}
+\newtoggle{fullversion}
+\ifodd\fullversionflag
+    \toggletrue{fullversion}
+\else
+    \togglefalse{fullversion}
+\fi
+
+\input{latexdefs}
+
+\iftoggle{fullversion}{
+    \usepackage{authblk}
+}{}
+
+\pagestyle{plain}
+
+\usepackage{breakcites}
+
+\begin{document}
+
+\title{Hyperledger Something-Paper}
+\date{}
+\author{Just a Bunch of Clowns}
+\iftoggle{fullversion}{
+}{
+\institute{}
+}
+
+\maketitle
+
+
+\begin{abstract}
+TODO.
+\end{abstract}
+
+\section{Introduction}
+\input{introduction.tex}
+
+\section{Why Open Source}
+\input{why_open_source.tex}
+
+\section{The Umbrella Organization}
+\input{the_umbrella_organization.tex}
+
+\section{Design Philosophy}
+\input{design_philosophy.tex}
+
+\section{Relevant Use Cases}
+\input{RelevantUseCases/relevant_use_cases.tex}
+
+\section{Current Projects}
+\input{CurrentProjects/current_projects.tex}
+
+\section{Highlighted Features}
+\input{HighlightedFeatures/highlighted_features.tex}
+
+\section{Long-Term Vision}
+\input{vision.tex}
+
+\section{Conclusion}
+\input{conclusion.tex}
+
+\iftoggle{fullversion}{
+    \bibliographystyle{alpha}
+}{
+    \bibliographystyle{alpha}
+}
+\bibliography{hyperledger}
+
+\clearpage
+%\appendix
+\iftoggle{fullversion}{}{
+%\input{appendix.tex}
+}
+%\input{appendixtwo.tex}
+\iftoggle{fullversion}{}{
+%\input{appendixthree.tex}
+}
+
+\end{document}

@@ -1,0 +1,419 @@
+\usepackage[pdfstartview=FitH,colorlinks,urlcolor=black,linkcolor=black,citecolor=black,pdfpagelabels]{hyperref}
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage{times}
+\usepackage{microtype,pdfsync}
+\usepackage{graphicx}
+\iftoggle{fullversion}{
+\usepackage{amsthm}}{}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{tabu} % detect if table is in math mode
+\usepackage{url} \usepackage{graphicx}
+\iftoggle{fullversion}{
+\usepackage{fullpage}}{}
+\usepackage{mathtools}
+\usepackage{footnote}
+
+\newcommand{\Theorem}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
+\newcommand{\Lemma}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
+\newcommand{\Corollary}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
+\newcommand{\Definition}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
+\newcommand{\Conjecture}[1]{\hyperref[#1]{Conjecture~\ref*{#1}}}
+\newcommand{\Section}[1]{\hyperref[#1]{Section~\ref*{#1}}}
+\newcommand{\Appendix}[1]{\hyperref[#1]{Appendix~\ref*{#1}}}
+
+%\usepackage{natbib}
+%\setlength{\bibsep}{0.3em}
+
+\usepackage{xspace}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+\usepackage[hang,flushmargin]{footmisc}
+
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,shapes,shadows,arrows,fit}
+
+\newcommand{\ignore}[1]{}
+
+\usepackage{caption}
+\captionsetup[figure]{width=.86\textwidth}
+\captionsetup[table]{width=.86\textwidth}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{3pt}
+
+\newenvironment{vbx}{\vbox\bgroup}{\egroup}
+
+\numberwithin{equation}{section}
+
+%fields and groups
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Qbar}{\overline{\Q}} 
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\Vs}{\mathbb{V}} 
+\newcommand{\Fbar}{\overline{\mathbb{F}}}
+
+%vectors, etc.
+\newcommand{\av}{\mathbf{a}} \newcommand{\cv}{\mathbf{c}} 
+\newcommand{\dv}{\mathbf{d}} \newcommand{\ev}{\mathbf{e}} 
+\newcommand{\rv}{\mathbf{r}} \newcommand{\sv}{\mathbf{s}} 
+\newcommand{\tv}{\mathbf{t}} \newcommand{\uv}{\mathbf{u}} 
+\newcommand{\vv}{\mathbf{v}} \newcommand{\wv}{\mathbf{w}} 
+\newcommand{\xv}{\mathbf{x}} \newcommand{\yv}{\mathbf{y}} 
+\newcommand{\zv}{\mathbf{z}} \newcommand{\zerov}{\mathbf{0}}
+\renewcommand{\AA}{\mathbf{A}} \newcommand{\BB}{\mathbf{B}} 
+\newcommand{\CC}{\mathbf{C}} \newcommand{\FF}{\mathbf{F}} 
+\newcommand{\MM}{\mathbf{M}} \newcommand{\RR}{\mathbf{R}} 
+\renewcommand{\SS}{\mathbf{S}} \newcommand{\TT}{\mathbf{T}} 
+\newcommand{\UU}{\mathbf{U}} \newcommand{\XX}{\mathcal{X}} 
+\newcommand{\YY}{\mathcal{Y}} \newcommand{\KK}{\mathcal{K}} 
+\newcommand{\A}{\mathcal{A}} \newcommand{\B}{\mathcal{B}} 
+\newcommand{\dash}{\mbox{---}}
+\renewcommand{\O}{\mathcal{O}}
+\newcommand{\qq}{\mathfrak{q}}
+\newcommand{\QQ}{\mathfrak{Q}}
+\newcommand{\ZQ}{\Z_{q}}
+
+\newcommand{\vtbl}[2]{\begin{array}{c}
+\hspace*{-3pt} #1 \hspace*{-4pt} \vspace*{5pt} \\
+\hspace*{-3pt} #2 \hspace*{-4pt}
+\end{array}}
+
+%\newcommand{\vk}{\mathbf{k}}
+\newcommand{\vu}{\mathbf{u}}
+
+\newcommand{\todo}[1]{{\color{red} {\bf TODO}:~{#1}}}
+\newcommand{\btodo}[1]{{\color{blue} {\bf TODO}:~{#1}}}
+\newcommand{\ltodo}[2]{{\color{blue} {\bf TODO (locked by {#1})}:~{#2}}}
+\newcommand{\lbtodo}[2]{{\color{blue} {\bf TODO (locked by {#1}}:~{#2}}}
+
+\newcommand{\mr}[1]{\ensuremath{\mathrm{{#1}}}}
+\newcommand{\la}{\ensuremath{\leftarrow}}
+\newcommand{\ra}{\ensuremath{\rightarrow}}
+\newcommand{\ala}{\ensuremath{\ \la\ }}
+\newcommand{\ara}{\ensuremath{\ \ra\ }}
+\newcommand{\rf}{\ensuremath{\overset{\$}{\la}}}
+
+\newcommand{\dist}[1]{\esm{\left\langle{#1}\right\rangle}}
+
+\newcommand{\parh}[1]{{\bf {#1}}\ \ }
+\renewcommand{\paragraph}[1]{\medskip\noindent {\bf {#1}}}
+
+
+\newcommand{\calA}{\ensuremath{\mathcal{A}}}
+\newcommand{\calB}{\ensuremath{\mathcal{B}}}
+\newcommand{\calC}{\ensuremath{\mathcal{C}}}
+\newcommand{\calD}{\ensuremath{\mathcal{D}}}
+\newcommand{\calE}{\ensuremath{\mathcal{E}}}
+\newcommand{\calF}{\ensuremath{\mathcal{F}}}
+\newcommand{\calG}{\ensuremath{\mathcal{G}}}
+\newcommand{\calH}{\ensuremath{\mathcal{H}}}
+\newcommand{\calI}{\ensuremath{\mathcal{I}}}
+\newcommand{\calJ}{\ensuremath{\mathcal{J}}}
+\newcommand{\calK}{\ensuremath{\mathcal{K}}}
+\newcommand{\calL}{\ensuremath{\mathcal{L}}}
+\newcommand{\calM}{\ensuremath{\mathcal{M}}}
+\newcommand{\calN}{\ensuremath{\mathcal{N}}}
+\newcommand{\calO}{\ensuremath{\mathcal{O}}}
+\newcommand{\calP}{\ensuremath{\mathcal{P}}}
+\newcommand{\calQ}{\ensuremath{\mathcal{Q}}}
+\newcommand{\calR}{\ensuremath{\mathcal{R}}}
+\newcommand{\calS}{\ensuremath{\mathcal{S}}}
+\newcommand{\calT}{\ensuremath{\mathcal{T}}}
+\newcommand{\calU}{\ensuremath{\mathcal{U}}}
+\newcommand{\calV}{\ensuremath{\mathcal{V}}}
+\newcommand{\calW}{\ensuremath{\mathcal{W}}}
+\newcommand{\calX}{\ensuremath{\mathcal{X}}}
+\newcommand{\calY}{\ensuremath{\mathcal{Y}}}
+\newcommand{\calZ}{\ensuremath{\mathcal{Z}}}
+
+% -- bold math symbols, for some reason --
+\newcommand{\boldalpha}{\ensuremath{\boldsymbol{\alpha}}}
+\newcommand{\boldchi}{\ensuremath{\boldsymbol{\chi}}}
+\newcommand{\boldtau}{\ensuremath{{\boldsymbol{\tau}}}}
+\newcommand{\boldstar}{\ensuremath{\mathbf{*}}}
+\newcommand{\bolda}{\ensuremath{\mathbf{a}}}
+\newcommand{\boldb}{\ensuremath{\mathbf{b}}}
+\newcommand{\boldc}{\ensuremath{\mathbf{c}}}
+\newcommand{\boldd}{\ensuremath{\mathbf{d}}}
+\newcommand{\bolde}{\ensuremath{\mathbf{e}}}
+\newcommand{\boldf}{\ensuremath{\mathbf{f}}}
+\newcommand{\boldg}{\ensuremath{\mathbf{g}}}
+\newcommand{\boldh}{\ensuremath{\mathbf{h}}}
+\newcommand{\boldi}{\ensuremath{\mathbf{i}}}
+\newcommand{\boldj}{\ensuremath{\mathbf{j}}}
+\newcommand{\boldk}{\ensuremath{\mathbf{k}}}
+\newcommand{\boldl}{\ensuremath{\mathbf{l}}}
+\newcommand{\boldm}{\ensuremath{\mathbf{m}}}
+\newcommand{\boldn}{\ensuremath{\mathbf{n}}}
+\newcommand{\boldo}{\ensuremath{\mathbf{o}}}
+\newcommand{\boldp}{\ensuremath{\mathbf{p}}}
+\newcommand{\boldq}{\ensuremath{\mathbf{q}}}
+\newcommand{\boldr}{\ensuremath{\mathbf{r}}}
+\newcommand{\bolds}{\ensuremath{\mathbf{s}}}
+\newcommand{\boldt}{\ensuremath{\mathbf{t}}}
+\newcommand{\boldu}{\ensuremath{\mathbf{u}}}
+\newcommand{\boldv}{\ensuremath{\mathbf{v}}}
+\newcommand{\boldw}{\ensuremath{\mathbf{w}}}
+\newcommand{\boldx}{{\ensuremath{\mathbf{x}}}}
+\newcommand{\boldy}{\ensuremath{\mathbf{y}}}
+\newcommand{\boldz}{\ensuremath{\mathbf{z}}}
+\newcommand{\boldzero}{\ensuremath{\boldsymbol{0}}}
+\newcommand{\boldone}{\ensuremath{\boldsymbol{1}}}
+
+% -- bold italic math symbols, for some reason --
+\newcommand{\boldia}{\ensuremath{\boldsymbol{a}}}
+\newcommand{\boldib}{\ensuremath{\boldsymbol{b}}}
+\newcommand{\boldic}{\ensuremath{\boldsymbol{c}}}
+\newcommand{\boldid}{\ensuremath{\boldsymbol{d}}}
+\newcommand{\boldie}{\ensuremath{\boldsymbol{e}}}
+\newcommand{\boldif}{\ensuremath{\boldsymbol{f}}}
+\newcommand{\boldig}{\ensuremath{\boldsymbol{g}}}
+\newcommand{\boldih}{\ensuremath{\boldsymbol{h}}}
+\newcommand{\boldii}{\ensuremath{\boldsymbol{i}}}
+\newcommand{\boldij}{\ensuremath{\boldsymbol{j}}}
+\newcommand{\boldik}{\ensuremath{\boldsymbol{k}}}
+\newcommand{\boldil}{\ensuremath{\boldsymbol{l}}}
+\newcommand{\boldim}{\ensuremath{\boldsymbol{m}}}
+\newcommand{\boldin}{\ensuremath{\boldsymbol{n}}}
+\newcommand{\boldio}{\ensuremath{\boldsymbol{o}}}
+\newcommand{\boldip}{\ensuremath{\boldsymbol{p}}}
+\newcommand{\boldiq}{\ensuremath{\boldsymbol{q}}}
+\newcommand{\boldir}{\ensuremath{\boldsymbol{r}}}
+\newcommand{\boldis}{\ensuremath{\boldsymbol{s}}}
+\newcommand{\boldit}{\ensuremath{\boldsymbol{t}}}
+\newcommand{\boldiu}{\ensuremath{\boldsymbol{u}}}
+\newcommand{\boldiv}{\ensuremath{\boldsymbol{v}}}
+\newcommand{\boldiw}{\ensuremath{\boldsymbol{w}}}
+\newcommand{\boldix}{\ensuremath{\boldsymbol{x}}}
+\newcommand{\boldiy}{\ensuremath{\boldsymbol{y}}}
+\newcommand{\boldiz}{\ensuremath{\boldsymbol{z}}}
+
+\newcommand{\transpose}[1]{\ensuremath{{#1}^{\intercal}}}
+
+\newcommand{\boldA}{\ensuremath{\mathbf{A}}}
+\newcommand{\boldB}{\ensuremath{\mathbf{B}}}
+\newcommand{\boldC}{\ensuremath{\mathbf{C}}}
+\newcommand{\boldD}{\ensuremath{\mathbf{D}}}
+\newcommand{\boldE}{\ensuremath{\mathbf{E}}}
+\newcommand{\boldF}{\ensuremath{\mathbf{F}}}
+\newcommand{\boldG}{\ensuremath{\mathbf{G}}}
+\newcommand{\boldH}{\ensuremath{\mathbf{H}}}
+\newcommand{\boldI}{\ensuremath{\mathbf{I}}}
+\newcommand{\boldJ}{\ensuremath{\mathbf{J}}}
+\newcommand{\boldK}{\ensuremath{\mathbf{K}}}
+\newcommand{\boldL}{\ensuremath{\mathbf{L}}}
+\newcommand{\boldM}{\ensuremath{\mathbf{M}}}
+\newcommand{\boldN}{\ensuremath{\mathbf{N}}}
+\newcommand{\boldO}{\ensuremath{\mathbf{O}}}
+\newcommand{\boldP}{\ensuremath{\mathbf{P}}}
+\newcommand{\boldQ}{\ensuremath{\mathbf{Q}}}
+\newcommand{\boldR}{\ensuremath{\mathbf{R}}}
+\newcommand{\boldS}{\ensuremath{\mathbf{S}}}
+\newcommand{\boldT}{\ensuremath{\mathbf{T}}}
+\newcommand{\boldU}{\ensuremath{\mathbf{U}}}
+\newcommand{\boldV}{\ensuremath{\mathbf{V}}}
+\newcommand{\boldW}{\ensuremath{\mathbf{W}}}
+\newcommand{\boldX}{\ensuremath{\mathbf{X}}}
+\newcommand{\boldY}{\ensuremath{\mathbf{Y}}}
+\newcommand{\boldZ}{\ensuremath{\mathbf{Z}}}
+
+\newcommand{\bbA}{\ensuremath{\mathbb{A}}}
+\newcommand{\bbB}{\ensuremath{\mathbb{B}}}
+\newcommand{\bbC}{\ensuremath{\mathbb{C}}}
+\newcommand{\bbD}{\ensuremath{\mathbb{D}}}
+\newcommand{\bbE}{\ensuremath{\mathbb{E}}}
+\newcommand{\bbF}{\ensuremath{\mathbb{F}}}
+\newcommand{\bbG}{\ensuremath{\mathbb{G}}}
+\newcommand{\bbH}{\ensuremath{\mathbb{H}}}
+\newcommand{\bbI}{\ensuremath{\mathbb{I}}}
+\newcommand{\bbJ}{\ensuremath{\mathbb{J}}}
+\newcommand{\bbK}{\ensuremath{\mathbb{K}}}
+\newcommand{\bbL}{\ensuremath{\mathbb{L}}}
+\newcommand{\bbM}{\ensuremath{\mathbb{M}}}
+\newcommand{\bbN}{\ensuremath{\mathbb{N}}}
+\newcommand{\bbO}{\ensuremath{\mathbb{O}}}
+\newcommand{\bbP}{\ensuremath{\mathbb{P}}}
+\newcommand{\bbQ}{\ensuremath{\mathbb{Q}}}
+\newcommand{\bbR}{\ensuremath{\mathbb{R}}}
+\newcommand{\bbS}{\ensuremath{\mathbb{S}}}
+\newcommand{\bbT}{\ensuremath{\mathbb{T}}}
+\newcommand{\bbU}{\ensuremath{\mathbb{U}}}
+\newcommand{\bbV}{\ensuremath{\mathbb{V}}}
+\newcommand{\bbW}{\ensuremath{\mathbb{W}}}
+\newcommand{\bbX}{\ensuremath{\mathbb{X}}}
+\newcommand{\bbY}{\ensuremath{\mathbb{Y}}}
+\newcommand{\bbZ}{\ensuremath{\mathbb{Z}}}
+
+\newcommand{\deq}{\mathrel{\mathop:}=}
+%\newcommand{\deq}{\ensuremath{\stackrel{\sf def}{=}}} % defined as equal to
+\newcommand{\zo}{\ensuremath{\{0,1\}}} % bits
+
+
+% THEOREMS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Theorem definitions
+
+\iftoggle{fullversion}{
+\theoremstyle{plain} \newtheorem{theorem}{Theorem}[section] 
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{proposition}[theorem]{Proposition} 
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition} \newtheorem{defn}[theorem]{Definition} 
+\newtheorem{definition}[theorem]{Definition} \newtheorem{rem}[theorem]{Remark} 
+%\newtheorem{alg}[theorem]{Algorithm} 
+\newtheorem{fact}[theorem]{Fact}
+%\newtheorem{construction}[theorem]{Construction} 
+}{}
+
+
+%% custom macros
+
+
+\newcommand{\esm}[1]{\ensuremath{#1}}
+\newcommand{\ms}[1]{\esm{\mathsf{#1}}}
+
+\newcommand{\Am}{\mathbf{A}}
+\newcommand{\Um}{\mathbf{U}}
+
+\newcommand{\LWE}{\ms{LWE}}
+
+\newcommand{\perplattice}{\Lambda_q^{\bot}}
+\newcommand{\cosetlattice}[1]{\Lambda_q^{#1}}
+
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\getsdollar}{\overset{\$}{\gets}}
+\newcommand{\poly}{\ms{poly}}
+\newcommand{\negl}{\ms{negl}}
+
+
+\newcommand{\PiFHE}{\Pi_{\ms{FHE}}}
+\newcommand{\FHEKeyGen}{\ms{FHE.KeyGen}}
+\newcommand{\FHEEnc}{\ms{FHE.Enc}}
+\newcommand{\FHEEval}{\ms{FHE.Eval}}
+\newcommand{\FHEDec}{\ms{FHE.Dec}}
+
+\newcommand{\sk}{\ms{sk}}
+\newcommand{\ct}{\ms{ct}}
+\newcommand{\msk}{\ms{msk}}
+\newcommand{\pp}{\ms{pp}}
+\newcommand{\state}{\ms{state}}
+
+\newcommand{\PiPRF}{\Pi_\ms{pPRF}}
+\newcommand{\PRFSetup}{\ms{pPRF.Setup}}
+\newcommand{\PRFPuncture}{\ms{pPRF.Puncture}}
+\newcommand{\PRFPunctureEval}{\ms{pPRF.PunctureEval}}
+\newcommand{\PRFEval}{\ms{pPRF.Eval}}
+
+\newcommand{\Bm}{\mathbf{B}}
+\newcommand{\Cm}{\mathbf{C}}
+\newcommand{\Dm}{\mathbf{D}}
+\newcommand{\Identity}{\mathbf{I}}
+
+\newcommand{\Rm}{\mathbf{R}}
+\newcommand{\Gm}{\mathbf{G}}
+\newcommand{\mv}{\mathbf{m}}
+\newcommand{\bv}{\mathbf{b}}
+\newcommand{\kv}{\mathbf{k}}
+\newcommand{\Mm}{\mathbf{M}}
+\newcommand{\kS}{k_{\scriptscriptstyle S}}
+
+\newcommand{\gv}{\mathbf{g}}
+
+\newcommand{\noise}{\ms{noise}}
+
+\newcommand{\FHEpp}{\ms{fhe.pp}}
+\newcommand{\FHEsk}{\ms{fhe.sk}}
+\newcommand{\FHEct}{\ms{fhe.ct}}
+
+\newcommand{\iprod}[2]{\left\langle #1, #2 \right\rangle}
+
+
+\newcommand{\evalcomp}{\ms{Eval}_{\ms{comp},j}}
+\newcommand{\comp}{\ms{comp}}
+\newcommand{\roundp}[1]{\lfloor #1 \rceil_p}
+
+\newcommand{\evalpk}{\ms{Eval}_{\ms{pk}}}
+\newcommand{\evalct}{\ms{Eval}_{\ms{ct}}}
+
+\newcommand{\SampleD}{\ms{SampleD}}
+\newcommand{\compip}{\ms{comp \circ \ms{IP}}}
+\newcommand{\Ctilde}{{\tilde{C}}}
+\newcommand{\Ginv}{\Gm^{-1}}
+
+\newcommand{\tab}{\hspace{4mm}}
+
+\newcommand{\Hybrid}[1]{\ms{H}_{#1}}
+
+\newcommand{\Borderline}[1]{\ms{Borderline}_{#1}}
+
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+
+\newcommand{\xstar}{x^*}
+\newcommand{\xvstar}{\xv^*}
+
+\newcommand{\cstar}{\cv^*}
+\newcommand{\ystar}{\yv^*}
+\newcommand{\Setup}{\ms{Setup}}
+\newcommand{\Puncture}{\ms{Puncture}}
+\newcommand{\Eval}{\ms{Eval}}
+
+\newcommand{\CgEval}{\FHEEval(\eq_\gamma, \cdot) \circ \ms{IP}}
+
+\newcommand{\Bfhe}{B_{\ms{fhe}}}
+\newcommand{\Babe}{B_{\ms{abe}}}
+
+
+\newcommand{\PicPRF}{\Pi_{\ms{cPRF}}}
+\newcommand{\cPRFSetup}{\ms{cPRF.Setup}}
+\newcommand{\cPRFConstrain}{\ms{cPRF.Constrain}}
+\newcommand{\cPRFConstrainEval}{\ms{cPRF.ConstrainEval}}
+\newcommand{\cPRFEval}{\ms{cPRF.Eval}}
+
+\newcommand{\SSetup}{\calS_{\ms{Setup}}}
+\newcommand{\SEval}{\calS_{\ms{Eval}}}
+\newcommand{\SConstrain}{\calS_{\ms{Constrain}}}
+\newcommand{\SKeyGen}{\calS_{\ms{KeyGen}}}
+\newcommand{\SEncrypt}{\calS_{\ms{Encrypt}}}
+
+\newcommand{\Expt}{\ms{Expt}}
+\newcommand{\enc}{\ms{enc}}
+
+\newcommand{\bvtilde}{\tilde{\bv}}
+\newcommand{\Bmtilde}{\tilde{\Bm}}
+
+\newcommand{\ppstar}{\pp^*}
+\newcommand{\mskstar}{\msk^*}
+\newcommand{\FHEctstar}{\FHEct^*}
+\newcommand{\skxstar}{\sk_{\xvstar}}
+\newcommand{\yvstar}{\yv^*}
+
+\newcommand{\qfhe}{q_{\ms{fhe}}}
+
+\newcommand{\eq}{\ms{eq}}
+\newcommand{\iO}{\ensuremath{i\mathcal{O}}}
+
+% SET TO FALSE TO DISABLE COMMENTS
+\newif\ifcomments
+\commentstrue
+
+\ifcomments
+\newcommand{\Hart}[1]
+{\begin{center} \framebox{ \parbox{ 15cm }
+{\textcolor[rgb]{0.8,0.0,0.7}{{\bf Hart:} #1}}} \end{center}}
+
+\else
+\newcommand{\Hart}[1]{}
+\fi
+
+\ifdefined\bolddelta
+\else
+\def\bolddelta{\boldsymbol{\delta}}
+\fi
