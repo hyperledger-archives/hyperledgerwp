@@ -1,12 +1,16 @@
-Security considerations for financial service applications
+\subsection{Security considerations for financial service applications}
 Irrespective of the use case considered for the financial service industry accountability and confidentiality considerations are prime drivers for the blockchain employed. Compliance guidelines like “Anti Money Laundering” and “Know Your Customer” demand that users/customers are known and have been given clearance by their bank and/or the market infrastructure provider. Therefore, it is safe to assume that all regulated financial service applications will be based on permissioned or private blockchains. Besides this user accountability user anonymity and transaction confidentiality are, depending on the use case, important criteria. Therefore, it is important for blockchains to be used as basis for financial service applications to allow the implementation of flexible role/access concepts allowing for user anonymity, confidentiality of the transaction content as well as ensuring that different transactions of the same user cannot be linked by observing the data flows. 
-Post-trade processing use case
+
+\subsection{Post-trade processing use case}
 In trading post-trade-processing comprises all activities after the closure of a transaction. This general description is valid for all types of trading, OTC (over-the-counter)-trading as well as trades concluded at exchanges. OTC-trading takes place when the trade counterparties interact directly or via brokerage services.
-On a high level post-trade-processing comprises of the following operational steps 
-Trade validation – activities taking place directly after trade execution, mainly validation and confirmation of the actual trading activities amongst the trade participants or through exchangese trade 
-Clearing – alignment and  matching of the actual trade instructions/ confirmations across the different counterparties as well as potential netting activities. In case the counterparties have agreed on bilateral margining or a the transactions are cleared through a clearing house the counterparty/settlemenmt risk arising between the time of concluding the trade  and the time of settlement (typically 2 - 3 days) is mitigated. 
-Settlement – the (legal) realization of the actual contractual obligations (legal implementation of the outcome of a trade)., thus during settlement the finality of the transaction is reached. This includes support processes like the notification of all relevant entities affected by the transaction
-Custody activities – custodians are responsible for the safekeeping of securities. As such the positions held by the trade counterparties have to be adjusted. 
+
+On a high level post-trade-processing comprises of the following operational steps
+\begin{description}
+\item [Trade validation] - activities taking place directly after trade execution, mainly validation and confirmation of the actual trading activities amongst the trade participants or through exchange 
+\item [Clearing] - alignment and  matching of the actual trade instructions/ confirmations across the different counterparties as well as potential netting activities. In case the counterparties have agreed on bilateral margining or the transactions are cleared through a clearing house the counterparty/settlement risk arising between the time of concluding the trade and the time of settlement (typically 2 - 3 days) is mitigated. 
+\item [Settlement] - the (legal) realization of the actual contractual obligations thus during settlement the finality of the transaction is reached. This includes support processes like the notification of all relevant entities affected by the transaction
+\item [Custody activities] - custodians are responsible for the safekeeping of securities. As such the positions held by the trade counterparties have to be adjusted. 
+\end{description}
 
 Besides these operational steps post-trade-processing typically contains reporting requirements regarding the trade/transaction under consideration. Amongst these are counterparty internal risk reporting – the contribution of the transaction to the market and credit risk of the respective counterparts – and regulatory reporting. 
 
