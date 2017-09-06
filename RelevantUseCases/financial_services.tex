@@ -21,7 +21,7 @@ The operational steps as well as the reporting activities are in today’s setup
 \textbf{segue why blockchain}
 
 \subsection{Efficiency benefits}
-Implementing post-trade-processing on blockchain is bound to lead to efficiency gains as compared to the current implementation model. When settling via a blockchain system one could exploit the peer-to-peer property of a blockchain, i. e. one counterparty would insert the transaction details into the system and the other counterparty would verify and confirm.  Thus the confirmation processes would be processed within the same system, rendering separate confirmation processes obsolete. In today’s world both parties would independently send their settlement instructions to a trusted 3rd party – the settlement agent – and this 3rd party would match both data sets and further process the settlement. Any mismatches in the initial instructions would lead to reconciliation efforts or even failed trades.
+Implementing post-trade-processing on blockchain is bound to lead to process efficiency gains as compared to the current implementation model. When settling via a blockchain system one could exploit the peer-to-peer property of a blockchain, i. e. one counterparty would insert the transaction details into the system and the other counterparty would verify and confirm.  Thus the confirmation processes would be processed within the same system, rendering separate confirmation processes obsolete. In today’s world both parties would independently send their settlement instructions to a trusted 3rd party – the settlement agent – and this 3rd party would match both data sets and further process the settlement. Any mismatches in the initial instructions would lead to reconciliation efforts or even failed trades.
 
 \subsection{Elimination of reconciliation}
 The complexity of the multi-party interactions/interfaces is additionally reduced as all data from all from all process steps and actors resides on the blockchain and is accessible on a need-to-know basis. Therefore, the reconciliation processes should become obsolete all together. Also the blockchain based system of record could serve as an efficient basis for reporting activities, e. g. regulatory transaction and trade reporting.
@@ -31,10 +31,24 @@ Based on current market processes, settlement is taking place \emph{T+x}. This m
 
 Therefore, it is not clear if exploiting this blockchain feature would really be seen solely as an advantage by trading counterparties if used for settlement. Other aspects of post trade activities, such as trade validation and clearing, may still benefit from the immediate finality of the records. 
 
-\textbf{segue post trade blockchain requirements}
+\subsection{Post trade blockchain requirements}
+
+When looking to apply blockchain to financial services, in addition to the commonly recognized properties of a tamper-proof irrefutable transaction log, a blockchain used for post trace activity it would need to have several features, typically possible with the use of permissioned distributed ledgers.
+
+\subsubsection{Finality}
+
+Nakamoto-style consensus algorithms (such as proof of work, proof of stake, or proof of elapsed time) result in temporary forks, which may lead to transaction rollback. This behavior is not acceptable for capital market use case, since all writes must be final on such ledgers. It is therefore expected that the blockchain applied here will have the ability to use a consensus algorithm, which has immediate finality.
+
+\subsubsection{Confidentiality and Privacy}
+
+Post trade activity participants have the expectation of privacy and confidentiality of transactions. The clearing house recording the transaction must ensure that parties are not able to perceive each others position and trade information. Moreover, the existence of trades themselves, even if parties are anonymized, should not be revealed.
+
+\subsubsection{Performance}
+
+As described above current post trade activities happen at the end of the business day, thus presenting a different set of performance requirements than a system base on a blockchain would have. Still the total number of transactions would increase given the participants' ability to learn their position with the clearing house in near real-time. So while the average transactions per second number would increase, the peak performance requirements would decrease significantly. It would therefore be expected that the blockchain supporting this use case would be capable of handling a peak throughput of 2-3 thousand transactions per second when used by a  major clearing house.
 
 \subsection{Hyperledger projects for post trade}
-\textbf{Hyperledger Fabric} channels provide an excellent solution to the problems of privacy and confidentiality. Ability to restrict data replication to only permissioned parties brings the benefits of the blockchain got data integrity and non-repudiation of transactions without compromising the security of the data. Additionally, reporting requirements - both internal and external - can be satisfied by including a regulatory agency and other oversight entities in the channel.
+\textbf{Hyperledger Fabric} channels combined with separate endorser sets provide an excellent solution to the problems of privacy and confidentiality. Ability to restrict data replication to only permissioned parties brings the benefits of the blockchain got data integrity and non-repudiation of transactions without compromising the security of the data. Additionally, reporting requirements - both internal and external - can be satisfied by including a regulatory agency and other oversight entities in the channel.
 
 Fabric's smart contracts, chaincodes, can be further leverage to provide real-time reporting and, even, potentially risk calculations. The ability to call other chaincodes allows applications both to increase the level of confidence in the data by anchoring\footnote{Recording in an independent immutable public store} it on a different channel and provide consolidated risk view of the market reducing systemic risk.
 
