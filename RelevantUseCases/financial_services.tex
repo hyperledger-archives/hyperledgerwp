@@ -24,27 +24,16 @@ The complexity of the multi-party interactions/interfaces is additionally reduce
 
 These efficiency gains have significant benefit to trade validation, clearing, both risk and regulatory reporting, as well as some aspects of the settlement phases of post trade processing\footnote{Using blockchain for near-time settlement may eliminate the netting (position offsetting) benefits to the counterparties derived from end-of-day processing, so its utility for the settlement portion of the post trade processing may be limited.}.
 
-\subsubsection{Post trade blockchain requirements}
-
 When looking to apply blockchain to financial services, in addition to the commonly recognized properties of a tamper-proof irrefutable transaction log, a blockchain used for post trace activity it would need to have several features, typically possible with the use of permissioned distributed ledgers.
-
-\subsubsection{Finality}
 
 Nakamoto-style consensus algorithms (such as proof of work, proof of stake, or proof of elapsed time) result in temporary forks, which may lead to transaction rollback. This behavior is not acceptable for capital market use case, since all writes must be final on such ledgers. It is therefore expected that the blockchain applied here will have the ability to use a consensus algorithm, which has immediate finality.
 
-\subsubsection{Confidentiality and Privacy}
-
 Post trade activity participants have the expectation of privacy and confidentiality of transactions. The clearing house recording the transaction must ensure that parties are not able to perceive each others position and trade information. Moreover, the existence of trades themselves, even if parties are anonymized, should not be revealed since it may make transactions susceptible to traffic analysis. Current generation of analysis tools may be able to compromise both identity of the participants and trading patterns, which could be correlated to the public market information.
-
-\subsubsection{Performance considerations}
 
 As described above current post trade activities happen at the end of the business day, thus presenting a different set of performance requirements than a system base on a blockchain would have. Still the total number of transactions would increase given the participants' ability to learn their position with the clearing house in near real-time. So while the average transactions per second number would increase, the peak performance requirements would decrease significantly.
 
-\subsubsection{Hyperledger projects for post trade}
 \textbf{Hyperledger Fabric} channels combined with separate endorser sets provide an excellent solution to the problems of privacy and confidentiality. Ability to restrict data replication to only permissioned parties brings the benefits of the blockchain got data integrity and non-repudiation of transactions without compromising the security of the data. Additionally, reporting requirements - both internal and external - can be satisfied by including a regulatory agency and other oversight entities in the channel.
 
--- following is not needed since it's not special. possibly move the summary into "why blockchain" section
-
-Fabric's smart contracts, chaincodes, can be further leverage to provide real-time reporting and, even, potentially risk calculations. The ability to call other chaincodes allows applications both to increase the level of confidence in the data by anchoring\footnote{Recording in an independent immutable public store} it on a different channel and provide consolidated risk view of the market reducing systemic risk.
+\textbf{Hyperledger Sawtooth} transaction families provide a reliable and performant way to encapsulate the operations relevant to the post trade. The ability to build complex rules using a language of choice to expose the interface which only provides the functions permitted in the context, bring a higher level of trust for the financial services institutions by providing the smart contract functionality without the risk of ad-hoc deployable code.
 
 \textbf{Hyperledger Indy} provides an ability to have unlinkable verifiable claims, which can be leveraged to report outstanding risk on a shared ledger without compromising the identity of the firm, but still allow a regulatory body to have a holistic view of the market, enabling it to prevent potential market crashes and major defaults.
