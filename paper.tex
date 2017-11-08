@@ -41,31 +41,31 @@
 The Hyperledger Project is a Linux Foundation sponsored initiative with the goal of building secure enterprise blockchain implementations. Hyperledger does not have a single blockchain codebase or a single blockchain project, but rather functions as an organization where projects that are accepted by the community can collaborate and share ideas, infrastructure, and even code.  In this paper we explain the reasons behind the existence of Hyperledger and some of the governance choices we made and the design philosophy we bring to projects.  We list some of the use cases and features that motivated our members to participate in Hyperledger. Additionally we outline the current state of Hyperledger in terms of the projects and development efforts that are currently ongoing, and provide directions for those looking to learn more about Hyperledger.  This paper is not intended as a technical whitepaper but rather as an introduction to Hyperledger. However, we provide appropriate references for those interested in the technical details of various aspects of Hyperledger.
 \end{abstract}
 
-\section{Introduction}
+\section{Introduction}~\label{sec:Introduction}
 \input{introduction.tex}
 
-\section{Why Open Source}
+\section{Why Open Source}~\label{sec:WhyOpenSource}
 \input{why_open_source.tex}
 
-\section{The Umbrella Organization}
+\section{The Umbrella Organization}~\label{sec:TheUmbrellaOrganization}
 \input{the_umbrella_organization.tex}
 
-\section{Design Philosophy}
+\section{Design Philosophy}~\label{sec:DesignPhilosophy}
 \input{design_philosophy.tex}
 
-\section{Relevant Use Cases}
+\section{Relevant Use Cases}~\label{sec:RelevantUseCases}
 \input{RelevantUseCases/relevant_use_cases.tex}
 
-\section{Current Projects}
+\section{Current Projects}~\label{sec:CurrentProjects}
 \input{CurrentProjects/current_projects.tex}
 
-\section{Highlighted Features}
+\section{Highlighted Features}~\label{sec:HighlightedFeatures}
 \input{HighlightedFeatures/highlighted_features.tex}
 
-\section{Long-Term Vision}
+\section{Long-Term Vision}~\label{sec:LongTermVision}
 \input{vision.tex}
 
-\section{Conclusion}
+\section{Conclusion}~\label{sec:Conclusion}
 \input{conclusion.tex}
 
 \iftoggle{fullversion}{
@@ -75,14 +75,7 @@ The Hyperledger Project is a Linux Foundation sponsored initiative with the goal
 }
 \bibliography{hyperledger}
 
-\clearpage
-%\appendix
-\iftoggle{fullversion}{}{
-%\input{appendix.tex}
-}
-%\input{appendixtwo.tex}
-\iftoggle{fullversion}{}{
-%\input{appendixthree.tex}
-}
-
+\appendix
+\section{Authors and Acknowledgements}
+\input{authors.tex}
 \end{document}
