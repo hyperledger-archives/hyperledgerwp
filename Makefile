@@ -13,7 +13,7 @@ spell::
 clean::
 	rm -fv *.aux *.log *.bbl *.blg *.toc *.out *.lot *.lof
 
-$(PAPER).pdf: $(wildcard *.tex)  $(PAPER).bbl 
+$(PAPER).pdf: $(wildcard *.tex) $(wildcard */*.tex)  $(PAPER).bbl 
 	$(TEX) $(PAPER) 
 	$(TEX) $(PAPER)
 
