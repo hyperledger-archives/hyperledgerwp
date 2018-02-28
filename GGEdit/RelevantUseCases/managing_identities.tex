@@ -1,0 +1,32 @@
+One of the most exciting applications of blockchain is for self-sovereign identity: the idea that an individual owns their own ``identity'' and controls the data around it. 
+This has profound implications for enterprise IT. 
+
+\subsubsection{Indy extends traditional identity systems}
+\textbf{Hyperledger Indy} is a distributed ledger with a primary focus on self-sovereign identity.
+Indy shares some features with traditional enterprise identity systems such as 2FA, IDPs, LDAP,  OAuth, and so on, namely:
+\begin{itemize}
+\item Industrial-strength cryptography 
+\item Rich metadata about identities
+\item Sophisticated access control and policy 
+\end{itemize}
+
+But there is a profound difference: Indy identities are shared, not siloed and federated. 
+An Indy identity is portable, so you can bring it with you wherever the distributed ledger is accepted. 
+
+This means that 10 systems that support Indy identities don't create 10 separate identities for John Q. Public. 
+Instead, all 10 systems access John's pre-existing identity on the blockchain. 
+John can simply show up and use his identity. 
+An organization can cancel John's access, but never his identity, because John owns it himself. 
+And John---not the places that accept John's identity---controls access to his data.
+
+\subsubsection{Indy fits enterprise IT better}
+ Indy also shares some features with blockchain-based identity solutions such as Blockstack (\url{https://blockstack.org/}) and Uport (\url{https://www.uport.me/}). 
+ All these technologies store identity on a distributed ledger to promote security and personal freedom. 
+
+However, Blockstack depends on Bitcoin and and Uport on Ethereum. These proof-of-work (PoW) ecosystems impose a non-trivial cost on transactions, so that every new persona, public key rotation, published attribute, or pairwise relationship becomes a tangible expense. This creates a disincentive to pairwise relationships, which undermines privacy. 
+
+Also, these ecosystems are global and public. They can't be special-purposed for a less-than-fully-global context. 
+
+Indy, on the other hand, does not use PoW, so that transactions are free. 
+And different instances of Indy can scale to fit whatever context is convenient. 
+That makes Indy more flexible, more cost-effective, and more practical for managing identities through an enterprise blockchain.  

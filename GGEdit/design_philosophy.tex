@@ -1,0 +1,51 @@
+Distributed ledgers can have vastly different requirements for different use cases. 
+For instance, when participants share high trust---such as between financial institutions---blockchains can add blocks to the chain using rapid consensus with short confirmation times. 
+On the other hand, when there is minimal trust between participants, they must tolerate slower processing.
+
+Hyperledger embraces the full spectrum of use cases. 
+We recognize that different enterprise scenarios have different requirements for confirmation times, decentralization, trust, and other issues. 
+And each issue represents a potential ``optimization point" for the technology. 
+
+To address this diversity, all Hyperledger projects follow the same design philosophy. All our projects must be:  
+\begin{itemize}
+\item Modular  
+\item Highly secure 
+\item Interoperable
+\item Token-agnostic 
+\item Complete with APIs
+\end{itemize}
+
+\subsection{Modular} 
+Hyperledger is developing modular, extensible frameworks with common building blocks that can  be reused.
+This modular approach enables developers to experiment with different types of components as they evolve, and to change individual components without affecting the rest of the system. 
+And this helps developers to create components that can be combined to build distributed ledger solutions well-suited to different requirements. 
+
+This modular approach means a diverse community of developers can work independently on different modules, and re-use common modules across multiple projects. 
+
+The Hyperledger Architecture Working Group defines functional modules and interfaces for issues such as communication, consensus, cryptography, identity, ledger storage, smart contract, and policy.\footnote{insert link to relevant webpage or doc} 
+
+\subsection{Highly secure}
+Security is a key consideration for distributed ledgers, since many use cases involve high-value transactions or sensitive data.
+With large codebases, many networked nodes, and valuable data flows, distributed ledgers have become prime targets for online attackers. 
+Securing a blockchain is quite a difficult task: Distributed ledgers must provide a large set of features and functions, while resisting persistent adversaries. 
+
+Security and robustness are the keys to enable enterprise-class blockchains to evolve, and provide the critical infrastructure for next-generation business networks. 
+Hyperledger projects embrace security by design and follow the best practices specified by the Linux Foundation's Core Infrastructure Initiative\footnote{insert link to relevant webpage or doc}.
+And all Hyperledger algorithms, protocols, and cryptography are reviewed and audited by security experts.
+
+\subsection{Interoperable} 
+In the future, many different blockchain networks will need to communicate and exchange data to form more complex and powerful networks. 
+At Hyperledger, we believe that all smart contracts and applications must be portable across many different blockchain networks. 
+This high degree of interoperability will help meet the promise of blockchain technologies. 
+
+\subsection{Token-agnostic}
+Hyperledger projects are independent and agnostic of all alt-coins, crypto-currencies, and tokens. 
+Hyperledger will never issue its own crypto-currency; this is decidedly not our purpose. 
+And no Hyperledger project will require a native token to provide incentives to operate the network or to manage resources. 
+The design philosophy includes an explicit focus on managing digital objects, which may represent currencies. 
+This removes any need for crypto-currencies or native tokens.
+
+\subsection{Complete with APIs}
+All Hyperledger projects provide rich and easy-to-use APIs. 
+A well-defined set of APIs and SDKs enable external clients and applications to interface quickly and easily with core DLT infrastructure. 
+These APIs support the growth of a rich developer ecosystem, and help blockchain and distributed ledger technologies proliferate across a wide range of industries and use cases.
