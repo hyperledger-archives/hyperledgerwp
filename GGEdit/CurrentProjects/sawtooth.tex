@@ -1,0 +1,46 @@
+\textbf{Hyperledger Sawtooth} is a modular platform for building, deploying, and running distributed ledgers. 
+Distributed ledgers provide a digital record (such as asset ownership) that is maintained without a central authority or implementation. 
+Sawtooth aims to keep distributed ledgers distributed, and to make smart contracts safe for enterprise use.
+In fitting with this focus, Sawtooth is highly modular. 
+This enables enterprises and consortiums to make decisions about their blockchain applications for themselves.
+
+\subsubsection{Technical innovations in Sawtooth}
+Sawtooth contains several technical innovations, including:
+\begin{itemize}
+\item \textbf{Unpluggable consensus}---Going beyond compile-time pluggable consensus, this allows a consortium to change consensus algorithms on a running blockchain simply by issuing a transaction.
+\item \textbf{Proof of Elapsed Time (PoET)}---A consensus algorithm with the scalability of Proof of Work but without the drawback of high power consumption.
+\item \textbf{Transaction families}---A smart contract abstraction that allows users to write smart contract logic in the language of their choosing.
+\item \textbf{Compatability with Ethereum contracts}---Transaction families can also integrate other smart contract interpreters including Hyperledger Burrow's Ethereum Virtual Machine. 
+Sawtooth features like permissioning and un-pluggable consensus enable Ethereum to be configured appropriately for an enterprise.
+\item \textbf{Parallel transaction execution}---Most blockchains require transactions to be executed in series   to guarantee consistent ordering at each peer. 
+Sawtooth includes an advanced parallel scheduler that splits blocks into parallel flows. 
+Parallelism allows for faster block processing to partially address the performance drawback of blockchains compared to traditional databases.
+\item \textbf{Private transactions}---Clusters of Sawtooth nodes can be easily deployed with separate permissioning. 
+This provides privacy and confidentiality among participants of that distinct chain. 
+No centralized service leak transaction patterns or other confidential information.
+However, an intermediary such as \textbf{Hyperledger Quilt} is required to connect separate chains. 
+In the future, Sawtooth plans to provide additional privacy and confidentiality features on top of trusted execution environments and/or zero knowledge primitives.
+\end{itemize}
+
+\subsubsection{Sawtooth extends the earlier distributed ledgers}
+Originally, Sawtooth was designed to explore scalability, security, and privacy questions prompted by the earliest distributed ledgers. 
+That required a modularity that was lacking at the time. 
+Starting from scratch enabled the project to draw lessons from those pioneering systems, and then extend into further use cases that the original currency ledgers weren't intended to address. 
+
+The consensus model PoET boosts scalability.
+Transaction families broaden the scope of smart contracts, while narrowing the potential attack surface. 
+The Sawtooth designers are also exploring trusted execution environments and the role those can play in private transactions.
+
+Even when branching into new business cases, certain key features of a distributed ledger must be preserved. 
+In an enterprise deployment, the distributed ledger must not devolve into nothing more than a replicated database. 
+Enterprise participants need autonomy and have the right to run their own nodes. 
+
+Since the set of participants will  be dynamic, the system---particularly the consensus model---must accommodate that volatility. 
+
+\subsubsection{Over-complex and under-explained technical details}
+It is not clear, for example, whether an O(n2) protocol (should we  say this, when many readers won't have a clue what this means?---GG) with fixed membership like Practical Byzantine Fault Tolerance (PBFT) can support the scale or volatility of a distributed ledger at production levels. 
+It seems unwise to sidestep the challenges of providing Byzantine Fault Tolerance to operate with only a Crash Fault Tolerant consensus. 
+Finally, both public and private distributed ledgers define a spectrum of authorization policies---not a binary either/or option.
+
+To find out more about Hyperledger Sawtooth, see \url{https://github.com/hyperledger/sawtooth-core} and further repositories named like \url{sawtooth-*}.
+
