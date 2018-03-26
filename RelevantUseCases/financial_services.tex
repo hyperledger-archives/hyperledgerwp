@@ -1,28 +1,43 @@
-The primary drivers for adoption of blockchain in financial service industry are considerations for privacy, confidentiality, and accountability. Compliance guidelines like “Anti Money Laundering” and “Know Your Customer” demand that users/customers are known and have been given clearance by their bank and/or the market infrastructure provider. These requirements drive the adoption of primarily permissioned and private blockchains as public blockchains still carry the risk of compromising participants' confidentiality and privacy. These considerations together with large volumes of transactions are the primary reasons that consortium blockchains are gaining momentum in adoption of distributed ledger technology by the financial services industry.
+The primary drivers for adoption of blockchain in financial services industry are privacy, confidentiality, and accountability.
 
-Among various use cases in financial services, and especially in capital markets, post trade activities is one of the prime areas, which can benefit from adoption of blockchain.
+Compliance guidelines like “Anti Money Laundering” and “Know Your Customer” require that banks and service providers verify their customers' legal identity and give them clearance to transact. These requirements drive the adoption of permissioned and private blockchains, since public blockchains can risk compromising a participant's privacy and confidentiality.
 
-Post trade processing comprises all activities after the completion of a trade transaction. This general description is valid for all types of trading - OTC (over-the-counter)\footnote{OTC trading takes place when the trade counterparties interact directly or via brokerage services.} trading as well as trades executed at exchanges.
+Together with large volumes of transactions, these considerations are the primary reasons that consortium blockchains are gaining momentum in financial services. Among many possible use cases in this industry---especially in capital markets---post-trade processing can benefit from blockchain.
 
-On a high level post-trade-processing comprises of the following operational steps:
+\subsubsection{Post trade processing overview}
+
+Post-trade processing includes all the activities after the completion of a trade. This covers transactions done over-the-counter (OTC), through a brokerage, or at an exchange.
+
+On a high level, post-trade processing includes these steps:
 \begin{description}
-\item [Trade validation] - activities taking place following the trade execution, mainly validation and confirmation of the actual transactions amongst the trade participants or through exchange. 
-\item [Clearing] - alignment and  matching of the actual trade instructions and confirmations across the different counterparties as well as potential netting activities. In case the counterparties have agreed on bilateral margining or the transactions are cleared through a clearing house, the counterparty/settlement risk arising between the time of concluding the trade and the time of settlement (typically 2 - 3 days) is mitigated. 
-\item [Settlement] - the (legal) realization of the actual contractual obligations to reach the finality of the transaction. This includes support processes like the notification of all relevant entities affected by the transaction.
-\item [Custody activities] - custodians are responsible for the safekeeping of securities. As such the positions held by the trade counterparties have to be adjusted. 
+\item [Trade validation] - Validation and confirmation of the transactions following the trade execution. 
+\item [Clearing] - Matching of the trade instructions and confirmations across the different counterparties as well as potential netting activities\footnote{The counterparty risk arising between the time of concluding the trade and the time of settlement, typically 2 - 3 days, is mitigated if the counterparties have agreed on bilateral margining or in case if the transactions are cleared through a clearing house.}. 
+\item [Settlement] - The legal realization of the contractual obligations to reach the finality of the transaction. This includes support processes such as notification of all entities affected by the transaction.
+\item [Custody activities] - Adjustment of the positions held with the custodians on behalf of the counterpaties.
+\item [Reporting] - Satisfying reporting requirements for regulatory and internal counterparty risk\footnote{The contribution of the transaction to the market and credit risk of the respective counterparts.}.
 \end{description}
 
-Besides these operational steps, post-trade-processing typically contains reporting requirements regarding the business transaction under consideration. Amongst these are counterparty internal risk reporting\footnote{The contribution of the transaction to the market and credit risk of the respective counterparts} and regulatory reporting. 
+\subsubsection{Issues with today's post trade processing}
 
-The operational steps as well as the reporting activities are in today’s setup typically a fragmented process chain spanning across a variety of departments of the respective counterparties, spread across a variety of entities, such as trade counterparties, brokers, settlement agents, central security depositories, clearing houses, thus resulting in a variety of interfaces. This consequently can result in a variety of reconciliation efforts along the process chain, between the trade counterparties as well as other entities/service providers involved, introducing inefficiencies in post trade processing.
+Today, all these steps are typically done through a fragmented workflow that spans numerous departments across different entities: brokers, central security depositories, clearing houses, exchanges, settlement agents, and so on. Every trade involves many different interfaces, processes, and reconciliation efforts. 
 
-Implementing post-trade-processing on blockchain is bound to lead to process efficiency gains as compared to the current implementation model. When settling via a blockchain system one could exploit the peer-to-peer property of a blockchain, i.e. one counterparty would insert the transaction details into the system and the other counterparty would verify and confirm.  Thus the confirmation processes would be processed within the same system, rendering separate confirmation processes obsolete.
+For example, today both parties send separate settlement instructions to a trusted third party---the settlement agent---which matches both data sets and instructions. Any mismatches trigger prolonged reconciliation efforts or even a failed trade. 
 
-In today's world both parties would independently send their settlement instructions to a trusted 3rd party - the settlement agent - and this 3rd party would match both data sets and further process the settlement. Any mismatches in the initial instructions would lead to reconciliation efforts or even failed trades. In case of a blockchain solution, the network itself acts as an independent trusted 3rd party due to its immutability and irrefutability of transactions.
+All this duplication of effort introduces inefficiency and delays into post-trade processing.
+
+\subsubsection{Blockchain can streamline post trade processing}
+
+Implementing post-trade-processing on blockchain is bound to lead to process efficiency gains as compared to the current implementation model.
+
+When settling via a blockchain system one could exploit the peer-to-peer property of a blockchain, i.e. one counterparty would insert the transaction details into the system and the other counterparty would verify and confirm.  Thus the confirmation processes would be processed within the same system, rendering separate confirmation processes obsolete.
+
+ In case of a blockchain solution, the network itself can act as an independent trusted 3rd party due to to the immutable and irrefutable nature of transactions on the blockchain.
 
 The complexity of the multi-party interactions/interfaces is additionally reduced as all data from all process steps and actors resides on the blockchain and is accessible on a need-to-know basis. Therefore, the reconciliation processes should become obsolete altogether. Also the blockchain based system of record could serve as an efficient basis for reporting activities, e. g. regulatory transaction and trade reporting.
 
 These efficiency gains have significant benefit to trade validation, clearing, both risk and regulatory reporting, as well as some aspects of the settlement phases of post trade processing\footnote{Using blockchain for near-time settlement may eliminate the netting (position offsetting) benefits to the counterparties derived from end-of-day processing, so its utility for the settlement portion of the post trade processing may be limited.}.
+
+\subsubsection{Special features required for post trade processing}
 
 When looking to apply blockchain to financial services, in addition to the commonly recognized properties of a tamper-proof irrefutable transaction log, a blockchain used for post trace activity would need to have several features, typically achievable with the use of permissioned distributed ledgers.
 
@@ -31,6 +46,8 @@ Distributed ledgers used for capital markets use cases would typically be expect
 Post trade activity participants have the expectation of privacy and confidentiality of transactions. The clearing house recording the transaction must ensure that parties are not able to perceive each others position and trade information. Moreover, the existence of trades themselves, even if parties are anonymized, should not be revealed since it may make transactions susceptible to traffic analysis. Current generation of analysis tools may be able to compromise both identity of the participants and trading patterns, which could be correlated to the public market information.
 
 As described above current post trade activities happen at the end of the business day, thus presenting a different set of performance requirements than a system based on a blockchain would have. The total number of transactions would increase given the participants' ability to learn their position with the clearing house in near real-time. So while the average transactions per second number would increase, the peak performance requirements would decrease significantly, since end-of-day reconciliation used to transmit the entire set of trade records for the day would have been made obsolete.
+
+\subsubsection{Hyperledger projects can help}
 
 \textbf{Hyperledger Fabric} channels deployed as fully disjoint networks with separate endorser sets and separate ordering nodes provide privacy and confidentiality. Ability to restrict data replication to only permissioned parties brings the benefits of the blockchain for data integrity and non-repudiation of transactions without compromising the security of the data. Reporting requirements - both internal and external - can be satisfied by including a regulatory agency and other oversight entities as members of the channel. Furthermore, network segmentation enabled by Fabric's channels can help in supporting multiple jurisdictions and regulatory regimes.
 
