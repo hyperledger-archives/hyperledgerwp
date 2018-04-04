@@ -8,14 +8,12 @@ And it's designed to support various pluggable components, and to accommodate th
 Starting from the premise that there are no ``one-size-fits-all'' solutions, Fabric is an extensible blockchain platform for running distributed applications. 
 It supports various consensus protocols, so it can be tailored to different use cases and trust models. 
 
-Fabric runs distributed applications written in general-purpose programming languages (such as C, C++, Go,  Java, Perl, PHP, Ruby, and so on?? are these examples accurate??) without depending on any native cryptocurrency.  
+Fabric runs distributed applications written in general-purpose programming languages (such as C, C++, Go,  Java, Perl, PHP, Ruby, and so on?? are these examples accurate??).  
 
-This stands in sharp contrast to most other blockchain platforms for running smart contracts, which either  require code to be written in a domain-specific language or else rely on a cryptocurrency. 
+This stands in sharp contrast to most other blockchain platforms for running smart contracts, which usually require code to be written in a domain-specific language. 
 
 Furthermore, Fabric uses a portable notion of membership for the permissioned model, which can be integrated with industry-standard identity management.  
 To support such flexibility, Fabric takes a novel architectural approach and revamps the way blockchains cope with non-determinism, resource exhaustion, and performance attacks.
-
-%Where Hyperledger Fabric breaks from some other blockchain systems is that it is private and permissioned. Rather than allowing anyone to be part of the network by either participating in the Proof-of-Work consensus or receiving transferrable forms of data such as tokens over the blockchain, the members of a Hyperledger Fabric network enroll through a membership services provider.
 
 Fabric also supports channels, which enable a group of participants to create a separate ledger of transactions. This is especially important for networks where some participants might be competitors who don't want every transaction---such as a special price offer only to selected participants---known to every participant in the network. 
 If a group of participants form a channel, only those participants and no others have copies of the ledger for that channel.
