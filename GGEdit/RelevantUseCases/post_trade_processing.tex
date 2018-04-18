@@ -1,0 +1,73 @@
+The primary drivers for blockchain in today's financial services are privacy, confidentiality, and accountability. 
+
+Compliance guidelines like ``Anti-Money Laundering” and ``Know Your Customer” require that a bank or service provider can vouch for a customer. These requirements drive the adoption of permissioned and private blockchains, since public blockchains can risk compromising a participant's privacy and confidentiality. 
+
+Together with a large volume of transactions, these considerations are helping consortium blockchains gain momentum in financial services. Among many possible use cases in this industry---especially in capital markets---post-trade processing can benefit from blockchain.
+
+\subsubsection{The many steps in post-trade processing}
+Post-trade processing includes all the activities after the completion of a trade.
+This covers transactions done over-the-counter (OTC), through a brokerage, or at an exchange.
+
+On a high level, post-trade processing includes these steps:
+\begin{enumerate}
+\item \textbf{Trade validation}---Confirming and validating the transaction. 
+\item \textbf{Clearing}---Matching the trade instructions and confirmations across the counterparties and handling any netting activities. Note that the risk period between concluding and settling a trade, typically two or three days, can be reduced by using bilateral margining or a clearing house. 
+\item \textbf{Settlement}---Realizing all contractual obligations to finalize the transaction legally. This includes support processes such as notifying all entities affected by the transaction.
+\item \textbf{Custody}---Adjusting and safekeeping securities by custodians on behalf of the counterparties. 
+\item \textbf{Reporting}---Reporting the trade to satisfy any internal risk analysis or regulations. 
+\end{enumerate}
+
+\subsubsection{Today's post-trade processing is inefficient}
+Today, all these steps are typically done through a fragmented workflow that spans numerous departments across different entities: brokers, central security depositories, clearing houses, exchanges, settlement agents, and so on. 
+Every trade involves many different interfaces, processes, and reconciliation efforts. 
+
+For example, today both parties send separate settlement instructions to a trusted third party---the settlement agent---which matches both data sets and instructions. Any mismatches trigger prolonged reconciliation efforts or even a failed trade. 
+
+All this duplication of effort introduces inefficiency and delays into post-trade processing.
+
+\subsubsection{Blockchain can streamline post-trade processing}
+Compared to the current model, doing post-trade processing on blockchain can be far more efficient. 
+
+This can exploit the peer-to-peer strength of a blockchain, so that one party can insert transaction details for the other party to verify. 
+Doing both processes on the same system can significantly streamline the process. The network itself can act as a trusted third party, due to the immutable and irrefutable nature of transactions on the blockchain.
+
+The complexity can be further reduced, since all data from all steps and all actors can reside on the blockchain, accessible on a need-to-know basis. 
+Any further reconciliation becomes unnecessary. And the blockchain system can also serve as an efficient basis for regulatory and trade reporting.
+
+This means four of the five steps listed above---validation, clearing, settlement, and reporting---can be streamlined by using a blockchain for post-trade processing.\footnote{The usefulness of blockchain for post-trade settlement may be limited, since near real-time settlement may eliminate the netting (or position offsetting) benefits of end-of-day processing.} 
+
+\subsubsection{Special features required for post-trade processing}
+Any permissioned distributed ledger can provide a tamper-proof, irrefutable transaction log. But to be effective for post-trade processing, a blockchain requires several added features, such as immediate finality, rock-solid confidentiality, and streamlined performance. 
+
+\textbf{Immediate finality}: Any distributed ledger used for capital markets must offer immediate finality, so that the receiver can be assured that the funds are good. 
+Consensus algorithms such as proof of work (PoW), proof of stake (PoS), or proof of elapsed time (PoET) can cause temporary forks and even transaction rollbacks. 
+These are unacceptable in post-trade processing. 
+Any blockchain for this use case must deploy a consensus algorithm that provides immediate finality.
+
+\textbf{Rock-solid confidentiality}: Participants in any trade expect their transactions to remain private and confidential. 
+The clearing house recording the transaction must ensure that parties can't see each other's position or trading information. 
+Even with anonymized data, the existence of trades must not be revealed, since this can make transactions susceptible to traffic analysis. 
+Correlated to public market information, this can compromise both a participant's identity and their trading patterns. 
+
+\textbf{Streamlined performance}: Today, all post-trade activities happen at the end of the business day, which presents different  requirements than most other use cases. 
+When using a blockchain, it will not be necessary to transmit the entire day's set of trade records to be reconciled. 
+All trades will be reconciled in near real-time. 
+
+Yet the total number of transactions will likely increase, since participants can learn their position with the clearing house in near real-time. 
+This means while the average number of transactions per second will likely increase, the peak performance requirements will decrease significantly. 
+Overall, system performance will be faster. 
+
+\subsubsection{Hyperledger projects can help}
+Several projects from Hyperledger provide features and functions that can help build effective  blockchain solutions for post-trade processing. 
+
+The channels supported by \textbf{Hyperledger Fabric} can be deployed as fully disjoint networks with separate endorser sets and ordering nodes to provide privacy and confidentiality. 
+Restricting data replication only to permissioned parties delivers the benefits of the blockchain for data integrity and non-repudiation of transactions, without compromising data security. 
+Reporting requirements---both internal and external---can be satisfied by including a regulatory agency and other oversight entities as members of the channel. 
+And the network segmentation enabled by Fabric's channels can support multiple jurisdictions and regulatory regimes.
+
+The transaction families in \textbf{Hyperledger Sawtooth} provide a reliable and powerful way to support post-trade activities. 
+Building complex rules using a preferred language, and exposing only the functions appropriate to the context, enables safer smart contracts. 
+And the option to prohibit  deployment of ad-hoc smart contracts further reduces risks for financial institutions.
+
+\textbf{Hyperledger Indy's} unlinkable verifiable claims can be leveraged to report outstanding risk on a shared ledger without compromising privacy. This still enables a regulatory body to take a holistic view of the market, and to help prevent potential market crashes and major defaults. This feature can also strengthen privacy, by putting participants in control of their network identities and any attributes they choose to disclose.
+
